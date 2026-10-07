@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaBEV-Nav · Trung Tien Dong</title>
+  <meta name="description" content="AquaBEV-Nav replaces the depth-based perception front end of a VLM-guided underwater exploration stack with direct monocular BEV occupancy prediction." />
+  <meta property="og:title" content="AquaBEV-Nav: Learned BEV Occupancy for Underwater Navigation and Exploration" />
+  <meta property="og:description" content="AquaBEV-Nav replaces the depth-based perception front end of a VLM-guided underwater exploration stack with direct monocular BEV occupancy prediction." />
+  <meta property="og:image" content="https://dongtrung28.github.io/assets/img/projects/aquabev-nav/thumb.jpg" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <link rel="icon" href="../../headshot.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+</head>
+<body data-base="../../">
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="../../"><img src="../../headshot.jpeg" alt="" /> Trung Tien Dong</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a href="../../#about">About</a>
+        <a href="../../#news">News</a>
+        <a href="../../#publications" class="is-active">Publications</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../Trung_CV_updated.pdf" target="_blank">CV</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <article>
+    <header class="proj-hero">
+      <div class="container">
+        <span class="badge">ICRA 2027 · Submitted</span>
+        <h1>AquaBEV-Nav: Learned BEV Occupancy for Underwater Navigation and Exploration</h1>
+        <p class="authors"><a href="https://dongtrung28.github.io/">Trung Tien Dong</a><sup>1*</sup>, Zhenqi Wu<sup>1*</sup>, Sahasra Kondapalli<sup>1</sup>, Jiayi Wu<sup>3</sup>, Yi Sheng<sup>2</sup>, <a href="https://xiaominlin.github.io/" target="_blank" rel="noopener">Xiaomin Lin</a><sup>1</sup></p>
+        <p class="affil"><sup>1</sup>ERA Lab, University of South Florida &nbsp;·&nbsp; <sup>2</sup>YES Lab, University of South Florida &nbsp;·&nbsp; <sup>3</sup>University of Maryland, College Park<br><sup>*</sup>Equal contribution &nbsp;·&nbsp; Also presented as a poster at the WPNMR Workshop @ IROS 2026</p>
+        <div class="btns">
+          <a class="btn" href="https://arxiv.org/abs/2609.32156" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="btn" href="https://arxiv.org/pdf/2609.32156" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a class="btn" href="#video"><i class="fas fa-play"></i> Video</a>
+          <span class="btn is-soon"><i class="fab fa-github"></i> Code <span class="soon">Coming soon</span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="proj-body">
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/fig1_pipeline_best.jpg" alt="Pipeline comparison" loading="lazy" />
+        <figcaption><b>AquaBEV-Nav.</b> CORAL constructs occupancy through monocular depth estimation, geometric reconstruction, and rasterization (top). AquaBEV-Nav replaces this perception pipeline with direct monocular BEV occupancy prediction (bottom).</figcaption>
+      </figure>
+      <h2 id="abstract">Abstract</h2>
+      <p class="abstract">Safe underwater exploration requires a robot to understand where surrounding structures are located and which regions are available for motion. Existing vision-based underwater exploration systems commonly obtain this information indirectly by estimating monocular depth, unprojecting the geometry into 3D space, and accumulating it into a 2D bird's-eye-view occupancy map. This reliance on intermediate depth estimation is particularly problematic underwater, where scattering and wavelength-dependent attenuation degrade visual cues and limit the reliability of monocular depth estimates.</p>
+      <p class="abstract">We introduce <strong>AquaBEV-Nav</strong>, an underwater exploration framework that bypasses explicit monocular depth estimation through direct bird's-eye-view occupancy prediction. Built upon the CORAL hierarchical exploration framework, AquaBEV-Nav replaces its depth-based perception front end with AquaBEV. Given a single RGB frame, AquaBEV maps visual features into a learned polar representation, performs causal reasoning along the range dimension, and reconstructs local Cartesian occupancy without relying on intermediate depth prediction. The resulting occupancy map is accumulated into CORAL's persistent spatial memory, providing spatial context for VLM-based high-level planning and collision constraints for dynamics-aware local trajectory generation. Across ten simulated reef environments and six occupancy backbones evaluated under a single protocol, AquaBEV-Nav reaches 37.48 structure IoU and 53.2 target IoU, 88.95% closed-loop coverage with zero collisions.</p>
+      <div class="stats reveal"><div class="stat"><div class="stat__num">37.48</div><div class="stat__label">structure IoU</div></div><div class="stat"><div class="stat__num">53.2</div><div class="stat__label">target IoU</div></div><div class="stat"><div class="stat__num">88.95%</div><div class="stat__label">closed-loop coverage</div></div><div class="stat"><div class="stat__num">0</div><div class="stat__label">collisions across ten simulated reefs</div></div></div>
+      <h2 id="video">Video</h2>
+      <div class="video-wrap reveal">
+        <video controls preload="metadata" playsinline poster="../../assets/img/projects/aquabev-nav/thumb.jpg">
+          <source src="../../assets/video/aquabev-nav.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <h2 id="contributions">Contributions</h2>
+      <ul class="contrib">
+        <li>We introduce <strong>AquaBEV-Nav</strong>, which connects monocular BEV occupancy directly to hierarchical underwater navigation.</li>
+        <li>We develop <strong>spatially calibrated BEV objectives</strong> derived from the observed navigation-relevant error structure, improving the planning representation without increasing model parameter count.</li>
+        <li>We conduct a <strong>controlled evaluation across six occupancy backbones</strong> in simulation and physical pool experiments to study how occupancy prediction quality translates into downstream navigation performance.</li>
+      </ul>
+      <h2 id="method">Method</h2>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/fig_arch_final.png" alt="AquaBEV-Nav architecture" loading="lazy" />
+        <figcaption><b>AquaBEV-Nav architecture.</b> AquaBEV-Nav predicts local structure, target, and observability fields from a single RGB image. These fields are transformed into the world frame and accumulated in the navigation system's persistent spatial memory.</figcaption>
+      </figure>
+      <p>The AquaBEV trunk (image encoder → cross-view transformer to polar features → causal range decoder) feeds separable heads for <strong>structure</strong> (obstacles) and <strong>target</strong> (e.g. objects of interest) fields. Training-only objectives — radial transport along each azimuth ray, a distance-weighted false-positive penalty, and target transport — shape these fields for planning without adding parameters. Per-frame predictions are fused into CORAL's persistent map, where a VLM high-level planner proposes waypoints and a dynamics-aware low-level planner generates collision-free trajectories.</p>
+      <h2 id="results">Results</h2>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/fig_qualitative_new.png" alt="Simulation perception" loading="lazy" />
+        <figcaption><b>Simulation perception.</b> Qualitative comparison of local BEV predictions across representative environments.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/AquaBEV_NAV_simulation_Result.jpg" alt="Closed-loop trajectories" loading="lazy" />
+        <figcaption><b>Closed-loop navigation by reef topology.</b> Executed trajectories produced by different perception front ends under the same CORAL navigation stack.</figcaption>
+      </figure>
+      <div class="fig-row">
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/fig_pool_train.png" alt="Pool perception" loading="lazy" />
+        <figcaption><b>Pool perception.</b> Front-view RGB and local BEV predictions from AquaBEV-Nav and the depth-based CORAL front end.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev-nav/qualitative_real.png" alt="Real-world qualitative results" loading="lazy" />
+        <figcaption><b>Real-world transfer.</b> Pool and Blue Grotto field frames: AquaBEV-Nav vs. CORAL and GaussianFormer.</figcaption>
+      </figure>
+      </div>
+
+      <h2 id="bibtex">BibTeX</h2>
+      <div class="bibtex">
+        <button class="copy-btn">Copy</button>
+<pre>@misc{dong2026aquabevnav,
+  title         = {AquaBEV-Nav: Learned BEV Occupancy for Underwater Navigation and Exploration},
+  author        = {Trung Tien Dong and Zhenqi Wu and Sahasra Kondapalli and Jiayi Wu and Yi Sheng and Xiaomin Lin},
+  year          = {2026},
+  eprint        = {2609.32156},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.32156}
+}</pre>
+      </div>
+    </div>
+
+    <p class="back-link"><a href="../../#publications"><i class="fas fa-arrow-left"></i> Back to publications</a></p>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Trung Tien Dong · ERA Lab, University of South Florida</span>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/trungdong28" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/DongTrung28" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:dongt@usf.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>

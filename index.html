@@ -4,458 +4,229 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trung Tien Dong</title>
+  <meta name="description" content="Trung Tien Dong — PhD student at the University of South Florida working on 3D perception, multimodal fusion and underwater robotics." />
+  <meta property="og:title" content="Trung Tien Dong" />
+  <meta property="og:description" content="PhD student @ USF ERA Lab — 3D perception, sonar, and underwater robotics." />
+  <meta property="og:image" content="https://dongtrung28.github.io/headshot.jpeg" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <link rel="icon" href="headshot.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:      #f0f2f5;
-      --surface: #ffffff;
-      --border:  #dde1e9;
-      --accent:  #5b6ef5;
-      --accent2: #7c3aed;
-      --text:    #111827;
-      --muted:   #6b7280;
-      --link:    #2563eb;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    /* ════════════════════════════
-       PAGE WRAPPER
-    ════════════════════════════ */
-    .page {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 3.5rem 2rem 6rem;
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-    }
-
-    /* ════════════════════════════
-       PROFILE CARD (left column)
-    ════════════════════════════ */
-    .profile {
-      width: 240px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.75rem 1.25rem 1.5rem;
-    }
-
-    .avatar-wrap {
-      margin-bottom: 1.1rem;
-    }
-    .avatar-wrap img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-      border: 2px solid var(--accent);
-      box-shadow:
-        0 0 10px rgba(91,110,245,0.5),
-        0 0 28px rgba(91,110,245,0.25),
-        0 0 52px rgba(124,58,237,0.15);
-    }
-
-    .profile-name {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-    .profile-role {
-      font-size: 0.78rem;
-      color: var(--accent2);
-      font-weight: 500;
-      margin-bottom: 0.15rem;
-    }
-    .profile-dept {
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-    .profile-email {
-      font-size: 0.75rem;
-      color: var(--link);
-      text-decoration: none;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-    .profile-email:hover { text-decoration: underline; }
-
-    /* Divider */
-    .profile-divider {
-      width: 100%;
-      height: 1px;
-      background: var(--border);
-      margin-bottom: 1rem;
-    }
-
-    /* Nav links */
-    .profile-nav {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-      margin-bottom: 1rem;
-    }
-    .profile-nav a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.42rem 0.6rem;
-      border-radius: 6px;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      transition: background 0.15s, color 0.15s;
-    }
-    .profile-nav a i { font-size: 0.72rem; color: var(--accent); width: 14px; text-align: center; }
-    .profile-nav a:hover { background: rgba(91,110,245,0.08); color: var(--text); }
-
-    /* Social buttons */
-    .social-links {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .social-links a {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      background: rgba(0,0,0,0.02);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.78rem;
-      font-weight: 500;
-      transition: border-color 0.2s, color 0.2s, background 0.2s;
-    }
-    .social-links a i { font-size: 0.78rem; color: var(--accent); width: 14px; text-align: center; }
-    .social-links a:hover {
-      border-color: var(--accent);
-      color: var(--text);
-      background: rgba(91,110,245,0.07);
-    }
-
-    /* ════════════════════════════
-       MAIN CONTENT (right column)
-    ════════════════════════════ */
-    main { flex: 1; min-width: 0; }
-
-    section { margin-bottom: 3.5rem; }
-
-    h2 {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    h2::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* Bio */
-    .prose {
-      color: var(--text);
-      font-size: 0.92rem;
-      line-height: 1.85;
-    }
-    .prose p { margin-bottom: 0.9rem; }
-    .prose p:last-child { margin-bottom: 0; }
-    .prose a { color: var(--link); text-decoration: none; font-weight: 500; }
-    .prose a:hover { text-decoration: underline; }
-
-    /* Research interests */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .tag {
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      background: rgba(91,110,245,0.08);
-      border: 1px solid rgba(91,110,245,0.2);
-      color: var(--accent2);
-      font-size: 0.82rem;
-      font-weight: 500;
-    }
-
-    /* Projects — pub-row style */
-    .pub-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .pub-row {
-      display: flex;
-      gap: 0;
-      align-items: flex-start;
-    }
-
-    /* Thumbnail column */
-    .pub-thumb {
-      flex: 0 0 30%;
-      position: relative;
-      padding-right: 1rem;
-    }
-    .pub-thumb img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-      display: block;
-    }
-    .pub-thumb .pub-badge {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 0.18em 0.55em;
-      border-radius: 3px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      white-space: nowrap;
-    }
-
-    /* Content column */
-    .pub-body {
-      flex: 1;
-      min-width: 0;
-      padding-left: 0.5rem;
-    }
-    .pub-body .pub-title {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-      line-height: 1.45;
-    }
-    .pub-body .pub-authors {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 0.15rem;
-    }
-    .pub-body .pub-venue {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 0.55rem;
-    }
-    .pub-body .pub-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-    .pub-body .pub-links a {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--text);
-      border: 1px solid var(--text);
-      border-radius: 4px;
-      padding: 0.1rem 0.55rem;
-      text-decoration: none;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .pub-body .pub-links a:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    /* Education */
-    .edu-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .edu-item:last-child { margin-bottom: 0; }
-    .edu-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.55rem;
-      box-shadow: 0 0 6px rgba(91,110,245,0.5);
-    }
-    .edu-body .degree {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-    .edu-body .school {
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    @media (max-width: 700px) {
-      .page { flex-direction: column; align-items: center; padding: 2rem 1.25rem 4rem; }
-      .profile { width: 100%; max-width: 340px; position: static; }
-      main { width: 100%; }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
-<body>
+<body data-base="">
 
-  <div class="page">
-
-    <!-- ── Profile card ── -->
-    <div class="profile">
-      <div class="avatar-wrap">
-        <img src="headshot.jpeg" alt="Trung Tien Dong" />
-      </div>
-      <p class="profile-name">Trung Tien Dong</p>
-      <p class="profile-role">PhD Student</p>
-      <p class="profile-dept">Electrical &amp; Computer Engineering, University of South Florida</p>
-      <a class="profile-email" href="mailto:dongt@usf.edu">dongt@usf.edu</a>
-
-      <div class="profile-divider"></div>
-
-      <nav class="profile-nav">
-        <a href="#about"><i class="fas fa-user"></i> About Me</a>
-        <a href="#research"><i class="fas fa-flask"></i> Research Interests</a>
-        <a href="#projects"><i class="fas fa-code-branch"></i> Projects</a>
-        <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="./"><img src="headshot.jpeg" alt="" /> Trung Tien Dong</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="blog/">Blog</a>
+        <a href="Trung_CV_updated.pdf" target="_blank">CV</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
       </nav>
+    </div>
+  </header>
 
-      <div class="profile-divider"></div>
-
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/trungdong28" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank">
-          <i class="fas fa-graduation-cap"></i> Google Scholar
-        </a>
-        <a href="Trung_CV_updated.pdf" target="_blank">
-          <i class="fas fa-file-pdf"></i> CV
-        </a>
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <div class="container hero__inner">
+      <img class="hero__avatar" src="headshot.jpeg" alt="Trung Tien Dong" />
+      <div>
+        <p class="hero__eyebrow">PhD Student · ERA Lab</p>
+        <h1>Trung Tien Dong</h1>
+        <p class="hero__role">Electrical &amp; Computer Engineering, University of South Florida — advised by <a href="https://xiaominlin.github.io/" target="_blank">Prof. Xiaomin Lin</a></p>
+        <div class="hero__links">
+          <a class="chip-btn" href="mailto:dongt@usf.edu"><i class="fas fa-envelope"></i> dongt@usf.edu</a>
+          <a class="chip-btn" href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i> Scholar</a>
+          <a class="chip-btn" href="https://www.linkedin.com/in/trungdong28" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a class="chip-btn" href="https://github.com/DongTrung28" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a class="chip-btn" href="Trung_CV_updated.pdf" target="_blank"><i class="fas fa-file-pdf"></i> CV</a>
+        </div>
       </div>
     </div>
+  </div>
 
+  <div class="container home">
     <main>
 
-    <!-- ── About ── -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="prose">
-        <p>Hi! I'm Trung Dong, a first-year PhD student in Electrical &amp; Computer Engineering at the University of South Florida, where I am advised by <a href="https://xiaominlin.github.io/" target="_blank">Prof. Xiaomin Lin</a>. My research focuses on 3D computer vision, multimodal perception, and robust AI for underwater robotics and autonomous systems.</p>
-        <p>I received my bachelor's degree in Computer Science from the University of South Florida, where I was advised by <a href="https://scholar.google.com/citations?user=bwI_W-QAAAAJ&hl=en" target="_blank">Prof. Arman Sargolzaei</a>. During my undergraduate studies, I worked on research in autonomous vehicles, 3D perception, and multimodal fusion, which shaped my current interests in perception and intelligent robotic systems.</p>
-      </div>
-    </section>
+      <!-- ── About ── -->
+      <section id="about" class="reveal">
+        <h2 class="sec-title">About Me</h2>
+        <div class="prose">
+          <p>Hi! I'm Trung, a first-year PhD student in Electrical &amp; Computer Engineering at the University of South Florida, where I work in the <a href="https://era-research-lab.github.io/" target="_blank">Embodied Robotics and Autonomy (ERA) Lab</a> with <a href="https://xiaominlin.github.io/" target="_blank">Prof. Xiaomin Lin</a>. My research focuses on <strong>3D computer vision</strong>, <strong>multimodal perception</strong>, and <strong>robust AI for underwater robotics</strong> — helping robots see and act where cameras fail, using sonar, bird's-eye-view representations, and sensor fusion.</p>
+          <p>I received my B.S. in Computer Science from USF, where I was advised by <a href="https://scholar.google.com/citations?user=bwI_W-QAAAAJ&hl=en" target="_blank">Prof. Arman Sargolzaei</a> in the RANCS Lab, working on autonomous vehicles, 3D perception, and multimodal fusion. I'm also organizing the <strong>Diver3D</strong> 3D sonar detection challenge at <a href="https://macvi.org" target="_blank">MaCVi @ WACV 2027</a>.</p>
+        </div>
+      </section>
 
-    <!-- ── Research Interests ── -->
-    <section id="research">
-      <h2>Research Interests</h2>
-      <div class="tags">
-        <span class="tag">3D Computer Vision</span>
-        <span class="tag">Underwater Robotics</span>
-        <span class="tag">Autonomous Systems</span>
-      </div>
-    </section>
+      <!-- ── News (rendered from assets/js/posts.js; static fallback below) ── -->
+      <section id="news" class="reveal">
+        <h2 class="sec-title">News <a href="blog/">All posts →</a></h2>
+        <ul class="news" id="news-list">
+          <li><time>Oct 2026</time><div><span class="news-tag">Challenge</span>Diver3D — the first 3D sonar diver detection challenge — is live at MaCVi @ WACV 2027.</div></li>
+          <li><time>Oct 2026</time><div><span class="news-tag">Conference</span>Presented PFS and AquaBEV-Nav at IROS 2026 in Pittsburgh.</div></li>
+        </ul>
+      </section>
 
-    <!-- ── Projects ── -->
-    <section id="projects">
-      <h2>Projects</h2>
-      <ol class="pub-list">
+      <!-- ── Publications ── -->
+      <section id="publications">
+        <h2 class="sec-title">Publications &amp; Projects</h2>
+        <div class="pubs">
 
-        <li>
-          <div class="pub-row">
-            <div class="pub-thumb">
-              <img src="assets/img/pfs.png" alt="pfs"/>
-              <span class="pub-badge">IROS 2026</span>
-            </div>
-            <div class="pub-body">
-              <div class="pub-title">Post Fusion Bird's Eye View Feature Stabilization for Robust Multimodal 3D Detection</div>
-              <div class="pub-authors">Trung Tien Dong, Dev Thakkar, Arman Sargolzaei, Xiaomin Lin</div>
-              <div class="pub-venue">University of South Florida</div>
-              <div class="pub-links">
-                <a href="https://era-research-lab.github.io/projects/pfs/" target="_blank">Page</a>
-                <a href="https://arxiv.org/abs/2603.05623">Paper</a>
-                <!-- <a href="#">Code</a> -->
-                <a href="https://youtu.be/-4BJK7Oi_yM">Video</a>
+          <article class="pub reveal">
+            <a class="pub__thumb" href="projects/aquabev/">
+              <img src="assets/img/projects/aquabev/thumb.jpg" alt="AquaBEV overview" loading="lazy" />
+              <span class="venue">WACV 2027</span>
+            </a>
+            <div class="pub__body">
+              <div class="pub__title"><a href="projects/aquabev/">AquaBEV: Monocular Underwater BEV Occupancy with 3D Sonar Supervision</a></div>
+              <div class="pub__authors"><span class="me">Trung Tien Dong</span>, Shengji Jin, Chen Chen, Yi Sheng, Xiaomin Lin</div>
+              <div class="pub__venue">WACV 2027 · <span class="status">Submitted</span></div>
+              <p class="pub__tldr">Predicts bird's-eye-view occupancy around an underwater robot from a single RGB image, using 3D imaging sonar as supervision during training only.</p>
+              <div class="pub__links">
+                <a class="pill" href="projects/aquabev/"><i class="fas fa-globe"></i> Page</a>
+                <a class="pill" href="https://arxiv.org/abs/2609.04411" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+                <span class="pill is-soon"><i class="fab fa-github"></i> Code · soon</span>
               </div>
             </div>
-          </div>
-        </li>
+          </article>
 
-      </ol>
-    </section>
+          <article class="pub reveal">
+            <a class="pub__thumb" href="projects/aquabev-nav/">
+              <img src="assets/img/projects/aquabev-nav/thumb.jpg" alt="AquaBEV-Nav overview" loading="lazy" />
+              <span class="venue">ICRA 2027</span>
+            </a>
+            <div class="pub__body">
+              <div class="pub__title"><a href="projects/aquabev-nav/">AquaBEV-Nav: Learned BEV Occupancy for Underwater Navigation and Exploration</a></div>
+              <div class="pub__authors"><span class="me">Trung Tien Dong</span>*, Zhenqi Wu*, Sahasra Kondapalli, Jiayi Wu, Yi Sheng, Xiaomin Lin</div>
+              <div class="pub__venue">ICRA 2027 · <span class="status">Submitted</span> &nbsp;|&nbsp; WPNMR Workshop @ IROS 2026</div>
+              <p class="pub__tldr">Drops the monocular-depth stage from a VLM-guided underwater exploration stack and feeds learned BEV occupancy straight into the planner — 88.95% coverage with zero collisions.</p>
+              <div class="pub__links">
+                <a class="pill" href="projects/aquabev-nav/"><i class="fas fa-globe"></i> Page</a>
+                <a class="pill" href="https://arxiv.org/abs/2609.32156" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+                <span class="pill is-soon"><i class="fab fa-github"></i> Code · soon</span>
+              </div>
+            </div>
+          </article>
 
-    <!-- ── Education ── -->
-    <section id="education">
-      <h2>Education</h2>
-      <div class="edu-item">
-        <div class="edu-dot"></div>
-        <div class="edu-body">
-          <p class="degree">Ph.D. in Electrical &amp; Computer Engineering</p>
-          <p class="school">University of South Florida · 2026 – Present</p>
+          <article class="pub reveal">
+            <a class="pub__thumb" href="projects/uscenes/">
+              <img src="assets/img/projects/uscenes/thumb.jpg" alt="uScenes overview" loading="lazy" />
+              <span class="venue venue--accepted">OCEANS 2026</span>
+            </a>
+            <div class="pub__body">
+              <div class="pub__title"><a href="projects/uscenes/">uScenes: A Multimodal RGB and 3D Sonar Dataset for Underwater Robot Perception</a></div>
+              <div class="pub__authors"><span class="me">Trung Tien Dong</span>, Zhenqi Wu, Aditya Penumarti, Zi-Hao Zhang, Micaiah Bartlett, Jane Shin, Xiaomin Lin</div>
+              <div class="pub__venue">MTS/IEEE OCEANS 2026, Monterey · Poster</div>
+              <p class="pub__tldr">110 scenes and 95,834 synchronized RGB + 3D multibeam sonar observations (277.6 min) collected from a BlueROV2 at Blue Grotto, Florida.</p>
+              <div class="pub__links">
+                <a class="pill" href="projects/uscenes/"><i class="fas fa-globe"></i> Page</a>
+                <a class="pill" href="https://arxiv.org/abs/2608.27795" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+                <span class="pill is-soon"><i class="fas fa-database"></i> Dataset · soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub reveal">
+            <a class="pub__thumb" href="projects/sonarvoxnet/">
+              <img src="assets/img/projects/sonarvoxnet/thumb.jpg" alt="SonarVoxNet overview" loading="lazy" />
+              <span class="venue">ICRA 2027</span>
+            </a>
+            <div class="pub__body">
+              <div class="pub__title"><a href="projects/sonarvoxnet/">SonarVoxNet: Diver Detection in 3D Bounding Box using 3D Sonar</a></div>
+              <div class="pub__authors">Eugene Park, Jiwon Lee, Seyoung Kan, <span class="me">Trung Dong</span>, Xiaomin Lin, Jane Shin</div>
+              <div class="pub__venue">ICRA 2027 · <span class="status">Submitted</span></div>
+              <p class="pub__tldr">Full 9-DoF oriented boxes for freely pitching and rolling divers from sparse 3D sonar, plus Diver3D — the first 3D sonar dataset with full diver orientation labels.</p>
+              <div class="pub__links">
+                <a class="pill" href="projects/sonarvoxnet/"><i class="fas fa-globe"></i> Page</a>
+                <a class="pill" href="https://arxiv.org/abs/2610.01644" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+                <span class="pill is-soon"><i class="fab fa-github"></i> Code · soon</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub reveal">
+            <a class="pub__thumb" href="https://era-research-lab.github.io/projects/pfs/" target="_blank">
+              <img src="assets/img/pfs_thumb.jpg" alt="PFS architecture" loading="lazy" />
+              <span class="venue venue--accepted">IROS 2026</span>
+            </a>
+            <div class="pub__body">
+              <div class="pub__title"><a href="https://era-research-lab.github.io/projects/pfs/" target="_blank">Post Fusion Bird's Eye View Feature Stabilization for Robust Multimodal 3D Detection</a></div>
+              <div class="pub__authors"><span class="me">Trung Tien Dong</span>, Dev Thakkar, Arman Sargolzaei, Xiaomin Lin</div>
+              <div class="pub__venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), 2026</div>
+              <p class="pub__tldr">A 3.3M-parameter plug-in that stabilizes fused BEV features, making camera–LiDAR detectors robust to domain shift and sensor failure without retraining the detector.</p>
+              <div class="pub__links">
+                <a class="pill" href="https://era-research-lab.github.io/projects/pfs/" target="_blank"><i class="fas fa-globe"></i> Page</a>
+                <a class="pill" href="https://arxiv.org/abs/2603.05623" target="_blank"><i class="ai ai-arxiv"></i> arXiv</a>
+                <a class="pill" href="https://github.com/era-research-lab/PFS" target="_blank"><i class="fab fa-github"></i> Code</a>
+                <a class="pill" href="https://youtu.be/-4BJK7Oi_yM" target="_blank"><i class="fab fa-youtube"></i> Video</a>
+              </div>
+            </div>
+          </article>
+
         </div>
-      </div>
-      <div class="edu-item">
-        <div class="edu-dot"></div>
-        <div class="edu-body">
-          <p class="degree">B.S. in Computer Science</p>
-          <p class="school">University of South Florida · 2022 – 2026</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
     </main>
 
+    <!-- ── Sidebar ── -->
+    <aside class="side">
+      <div class="card reveal">
+        <h3>Research Interests</h3>
+        <div class="tags">
+          <span class="tag">3D Computer Vision</span>
+          <span class="tag">Underwater Robotics</span>
+          <span class="tag">Sonar Perception</span>
+          <span class="tag">Multimodal Fusion</span>
+          <span class="tag">BEV Representations</span>
+          <span class="tag">Autonomous Systems</span>
+        </div>
+      </div>
+
+      <div class="card reveal" id="education">
+        <h3>Education</h3>
+        <ul class="timeline">
+          <li><div class="t-title">Ph.D. in Electrical &amp; Computer Engineering</div><div class="t-sub">University of South Florida · 2026 – Present</div></li>
+          <li><div class="t-title">B.S. in Computer Science</div><div class="t-sub">University of South Florida · 2022 – 2026</div></li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>Service</h3>
+        <ul class="timeline">
+          <li><div class="t-title">Organizer, Diver3D 3D Sonar Challenge</div><div class="t-sub">MaCVi Workshop @ WACV 2027</div></li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li><i class="fas fa-envelope"></i><a href="mailto:dongt@usf.edu">dongt@usf.edu</a></li>
+          <li><i class="fas fa-location-dot"></i>ERA Lab, USF · Tampa, FL</li>
+        </ul>
+      </div>
+    </aside>
   </div>
 
-  <footer>&copy; 2026 Trung Tien Dong</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Trung Tien Dong</span>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/trungdong28" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/DongTrung28" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:dongt@usf.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
 
+  <script src="assets/js/posts.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>

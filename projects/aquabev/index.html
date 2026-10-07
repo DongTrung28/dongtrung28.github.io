@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaBEV · Trung Tien Dong</title>
+  <meta name="description" content="AquaBEV predicts local bird&#x27;s-eye-view occupancy from a single underwater RGB image, trained with 3D imaging sonar as geometric supervision." />
+  <meta property="og:title" content="AquaBEV: Monocular Underwater BEV Occupancy with 3D Sonar Supervision" />
+  <meta property="og:description" content="AquaBEV predicts local bird&#x27;s-eye-view occupancy from a single underwater RGB image, trained with 3D imaging sonar as geometric supervision." />
+  <meta property="og:image" content="https://dongtrung28.github.io/assets/img/projects/aquabev/thumb.jpg" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <link rel="icon" href="../../headshot.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+</head>
+<body data-base="../../">
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="../../"><img src="../../headshot.jpeg" alt="" /> Trung Tien Dong</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a href="../../#about">About</a>
+        <a href="../../#news">News</a>
+        <a href="../../#publications" class="is-active">Publications</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../Trung_CV_updated.pdf" target="_blank">CV</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <article>
+    <header class="proj-hero">
+      <div class="container">
+        <span class="badge">WACV 2027 · Submitted</span>
+        <h1>AquaBEV: Monocular Underwater BEV Occupancy with 3D Sonar Supervision</h1>
+        <p class="authors"><a href="https://dongtrung28.github.io/">Trung Tien Dong</a><sup>1</sup>, Shengji Jin<sup>2</sup>, Chen Chen<sup>3</sup>, Yi Sheng<sup>2</sup>, <a href="https://xiaominlin.github.io/" target="_blank" rel="noopener">Xiaomin Lin</a><sup>1</sup></p>
+        <p class="affil"><sup>1</sup>ERA Lab, University of South Florida &nbsp;·&nbsp; <sup>2</sup>YES Lab, University of South Florida &nbsp;·&nbsp; <sup>3</sup>University of Central Florida</p>
+        <div class="btns">
+          <a class="btn" href="https://arxiv.org/abs/2609.04411" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="btn" href="https://arxiv.org/pdf/2609.04411" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>
+          <span class="btn is-soon"><i class="fab fa-github"></i> Code <span class="soon">Coming soon</span></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="proj-body">
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev/task.png" alt="AquaBEV task formulation" loading="lazy" />
+        <figcaption><b>Task.</b> A single RGB image is used to predict local BEV occupancy. Paired 3D imaging sonar provides a three-state target (occupied / observed-free / unknown) during training only — at inference, AquaBEV needs the camera alone.</figcaption>
+      </figure>
+      <h2 id="abstract">Abstract</h2>
+      <p class="abstract">Autonomous underwater robots are widely used for exploration, monitoring, and inspection, where safe navigation depends on understanding the surrounding free and occupied space. Bird's eye view (BEV) occupancy provides such a representation, but predicting it from a single underwater RGB image is difficult due to limited, unreliable geometric cues from appearance alone. 3D imaging sonar offers complementary geometric measurements to supervise this task.</p>
+      <p class="abstract">We introduce <strong>AquaBEV</strong>, a monocular underwater occupancy model that predicts local BEV occupancy from a single RGB image, using paired 3D imaging sonar as geometric supervision during training. AquaBEV maps visual features into a calibration free polar representation and applies causal decoding along the range dimension before reconstructing the prediction in Cartesian BEV coordinates. A controlled underwater occupancy benchmark was established, adapting representative occupancy methods to the same RGB to sonar task under a unified protocol. AquaBEV achieves 31.4 Visible IoU and 38.6 Observed IoU, 4.0% and 4.3% relative improvements over the strongest transferred baseline.</p>
+      <div class="stats reveal"><div class="stat"><div class="stat__num">31.4</div><div class="stat__label">Visible IoU</div></div><div class="stat"><div class="stat__num">38.6</div><div class="stat__label">Observed IoU</div></div><div class="stat"><div class="stat__num">+4.3%</div><div class="stat__label">relative Observed IoU over the strongest transferred baseline</div></div><div class="stat"><div class="stat__num">RGB only</div><div class="stat__label">at inference — sonar is used for training supervision</div></div></div>
+      <h2 id="contributions">Contributions</h2>
+      <ul class="contrib">
+        <li><strong>New task &amp; benchmark.</strong> We formulate monocular underwater BEV occupancy using 3D imaging sonar as training supervision and establish the first controlled benchmark for this setting, adapting representative occupancy methods (SurroundOcc, BEVFormer, VoxFormer, MonoScene, TPVFormer, OccFormer, GaussianFormer) under a unified training and evaluation protocol.</li>
+        <li><strong>AquaBEV.</strong> The first monocular BEV occupancy model designed for underwater perception. It uses a calibration-free polar representation with causal range decoding and outperforms the strongest transferred baseline by 4.0% in Visible IoU and 4.3% in Observed IoU.</li>
+      </ul>
+      <h2 id="method">Method</h2>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev/arch6.png" alt="AquaBEV architecture" loading="lazy" />
+        <figcaption><b>Overview of AquaBEV.</b> AquaBEV encodes a single RGB image into a learned polar representation (θ, r), applies causal reasoning along the range dimension, and differentiably transforms the resulting polar occupancy prediction into Cartesian BEV coordinates (x, y).</figcaption>
+      </figure>
+      <p>An image encoder extracts features that a calibration-free cross-view transformer gathers into a polar latent field indexed by azimuth and range, using learned polar queries. A <strong>causal range decoder</strong> then processes each ray from near to far without looking ahead — mirroring how an acoustic pulse propagates — before a differentiable warp reconstructs the prediction on a Cartesian BEV grid. Training supervises only the cells the sonar actually observed.</p>
+      <h2 id="results">Results</h2>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev/comparison1.jpg" alt="Qualitative comparison" loading="lazy" />
+        <figcaption><b>Qualitative comparison of monocular underwater BEV occupancy.</b> From left: front-view RGB, sonar ground truth, AquaBEV (ours), MonoScene, SurroundOcc, TPVFormer and GaussianFormer.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev/ablation2.png" alt="Ablation" loading="lazy" />
+        <figcaption><b>Ablation of the causal range decoder.</b> Preserving the ordered range structure — not polar coordinates alone — is what drives the improvement.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/aquabev/qualitative_diver.png" alt="Qualitative results with divers" loading="lazy" />
+        <figcaption><b>More qualitative results with divers.</b> Per row: RGB input, sonar ground truth, thresholded prediction, occupancy probability, and an error map (true positive / false positive / false negative).</figcaption>
+      </figure>
+
+      <h2 id="bibtex">BibTeX</h2>
+      <div class="bibtex">
+        <button class="copy-btn">Copy</button>
+<pre>@misc{dong2026aquabev,
+  title         = {AquaBEV: Monocular Underwater BEV Occupancy with 3D Sonar Supervision},
+  author        = {Trung Tien Dong and Shengji Jin and Chen Chen and Yi Sheng and Xiaomin Lin},
+  year          = {2026},
+  eprint        = {2609.04411},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2609.04411}
+}</pre>
+      </div>
+    </div>
+
+    <p class="back-link"><a href="../../#publications"><i class="fas fa-arrow-left"></i> Back to publications</a></p>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Trung Tien Dong · ERA Lab, University of South Florida</span>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/trungdong28" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/DongTrung28" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:dongt@usf.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>

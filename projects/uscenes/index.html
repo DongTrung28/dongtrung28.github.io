@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uScenes · Trung Tien Dong</title>
+  <meta name="description" content="uScenes is a field-collected underwater dataset of synchronized RGB images and 3D multibeam sonar point clouds: 110 scenes, 95,834 observations, 277.6 minutes." />
+  <meta property="og:title" content="uScenes: A Multimodal RGB and 3D Sonar Dataset for Underwater Robot Perception" />
+  <meta property="og:description" content="uScenes is a field-collected underwater dataset of synchronized RGB images and 3D multibeam sonar point clouds: 110 scenes, 95,834 observations, 277.6 minutes." />
+  <meta property="og:image" content="https://dongtrung28.github.io/assets/img/projects/uscenes/thumb.jpg" />
+  <script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+  <link rel="icon" href="../../headshot.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+</head>
+<body data-base="../../">
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="topbar__brand" href="../../"><img src="../../headshot.jpeg" alt="" /> Trung Tien Dong</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fas fa-bars"></i></button>
+      <nav class="topbar__nav" aria-label="Primary">
+        <a href="../../#about">About</a>
+        <a href="../../#news">News</a>
+        <a href="../../#publications" class="is-active">Publications</a>
+        <a href="../../blog/">Blog</a>
+        <a href="../../Trung_CV_updated.pdf" target="_blank">CV</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <article>
+    <header class="proj-hero">
+      <div class="container">
+        <span class="badge">MTS/IEEE OCEANS 2026 · Monterey</span>
+        <h1>uScenes: A Multimodal RGB and 3D Sonar Dataset for Underwater Robot Perception</h1>
+        <p class="authors"><a href="https://dongtrung28.github.io/">Trung Tien Dong</a><sup>1</sup>, Zhenqi Wu<sup>1</sup>, Aditya Penumarti<sup>2</sup>, Zi-Hao Zhang<sup>2</sup>, Micaiah Bartlett<sup>1</sup>, Jane Shin<sup>3</sup>, <a href="https://xiaominlin.github.io/" target="_blank" rel="noopener">Xiaomin Lin</a><sup>1</sup></p>
+        <p class="affil"><sup>1</sup>ERA Lab, University of South Florida &nbsp;·&nbsp; <sup>2</sup>University of Florida &nbsp;·&nbsp; <sup>3</sup>Seoul National University</p>
+        <div class="btns">
+          <a class="btn" href="https://arxiv.org/abs/2608.27795" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i> arXiv</a>
+          <a class="btn" href="https://arxiv.org/pdf/2608.27795" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>
+          <span class="btn is-soon"><i class="fas fa-database"></i> Dataset <span class="soon">Coming soon</span></span>
+          <a class="btn" href="https://macvi.org/workshop/macvi27/challenges/diver3d" target="_blank" rel="noopener"><i class="fas fa-trophy"></i> Diver3D Challenge</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="proj-body">
+      <figure class="reveal">
+        <img src="../../assets/img/projects/uscenes/ocean_figure1.jpg" alt="uScenes samples" loading="lazy" />
+        <figcaption><b>Representative synchronized observations from uScenes.</b> The top row shows RGB images, and the bottom row shows bird's eye view projections of the corresponding 3D sonar point clouds.</figcaption>
+      </figure>
+      <div class="stats reveal"><div class="stat"><div class="stat__num">110</div><div class="stat__label">scenes</div></div><div class="stat"><div class="stat__num">95,834</div><div class="stat__label">synchronized RGB + 3D sonar observations</div></div><div class="stat"><div class="stat__num">277.6 min</div><div class="stat__label">of field recordings</div></div><div class="stat"><div class="stat__num">Blue Grotto</div><div class="stat__label">natural spring, Williston, FL</div></div></div>
+      <h2 id="abstract">Abstract</h2>
+      <p class="abstract">Robust perception is essential for the deployment of autonomous underwater robots. However, optical cameras become unreliable under poor illumination and backscatter. Forward looking (2D) acoustic sensors remain effective under these conditions, but they measure range and bearing while leaving elevation unresolved, creating an ambiguity that prevents individual sonar returns from being localized in three dimensional (3D) space. This complicates the sensor use for 3D scene understanding and precise object detection.</p>
+      <p class="abstract">We introduce <strong>uScenes</strong>, a multimodal underwater dataset containing synchronized 3D multibeam sonar point clouds and RGB imagery. The dataset contains 110 scenes and 95,834 synchronized observations, representing 277.6 minutes of data collected across multiple field sessions. uScenes establishes a foundation for underwater sensor fusion, cross modal representation learning and 3D scene understanding.</p>
+      <h2 id="explore">Explore the data</h2>
+      <div class="scene-gallery reveal" id="gallery">
+        <div class="sg__main">
+          <figure class="sg__pane"><img id="sg-rgb" src="../../assets/img/projects/uscenes/gallery/0_rgb.jpg" alt="RGB frame" /><span class="sg__label"><i class="fas fa-camera"></i> RGB camera</span></figure>
+          <figure class="sg__pane sg__pane--sonar"><img id="sg-sonar" src="../../assets/img/projects/uscenes/gallery/0_sonar.jpg" alt="3D sonar BEV" /><span class="sg__label"><i class="fas fa-wave-square"></i> 3D sonar (BEV)</span></figure>
+          <button class="sg__nav sg__nav--prev" aria-label="Previous scene"><i class="fas fa-chevron-left"></i></button>
+          <button class="sg__nav sg__nav--next" aria-label="Next scene"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="sg__thumbs">
+          <button class="sg__thumb is-active" data-i="0" aria-label="Scene 1"><img src="../../assets/img/projects/uscenes/gallery/0_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="1" aria-label="Scene 2"><img src="../../assets/img/projects/uscenes/gallery/1_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="2" aria-label="Scene 3"><img src="../../assets/img/projects/uscenes/gallery/2_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="3" aria-label="Scene 4"><img src="../../assets/img/projects/uscenes/gallery/3_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="4" aria-label="Scene 5"><img src="../../assets/img/projects/uscenes/gallery/4_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="5" aria-label="Scene 6"><img src="../../assets/img/projects/uscenes/gallery/5_rgb.jpg" alt="" loading="lazy" /></button>
+          <button class="sg__thumb" data-i="6" aria-label="Scene 7"><img src="../../assets/img/projects/uscenes/gallery/6_rgb.jpg" alt="" loading="lazy" /></button>
+        </div>
+        <p class="sg__count"><span id="sg-i">1</span> / 7 · synchronized RGB and 3D sonar from uScenes</p>
+      </div>
+      <h2 id="contributions">Contributions</h2>
+      <ul class="contrib">
+        <li>A <strong>field-collected underwater dataset</strong> containing 110 scenes, 95,834 synchronized RGB and 3D multibeam sonar observations, and 277.6 minutes of recordings acquired from a mobile robotic platform.</li>
+        <li><strong>Metric sonar point clouds</strong> with 3D position and normalized signal strength, together with paired RGB images, timestamps, scene metadata, and clearly documented coordinate conventions.</li>
+        <li>The <strong>complete construction methodology</strong> — sensing platform, temporal association, point cloud generation, data organization, and optic–acoustic calibration procedures.</li>
+      </ul>
+      <h2 id="collection">Data collection</h2>
+      <div class="fig-row">
+      <figure class="reveal">
+        <img src="../../assets/img/projects/uscenes/rov2.jpg" alt="BlueROV2 platform" loading="lazy" />
+        <figcaption><b>The uScenes platform.</b> A BlueROV2 carries an RGB camera and a 3D multibeam sonar in a rigid, forward-facing configuration.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/uscenes/showcase.jpg" alt="Field collection" loading="lazy" />
+        <figcaption><b>Field collection</b> of the dataset at Blue Grotto, Florida.</figcaption>
+      </figure>
+      </div>
+      <figure class="reveal">
+        <img src="../../assets/img/projects/uscenes/Calibration.jpg" alt="Calibration targets" loading="lazy" />
+        <figcaption><b>Calibration targets.</b> (a) Four dimension-constrained concrete blocks on the submerged platform. (b) A diver holding a calibration board with round-headed pins. (c) Two boards with flat-headed screws at different depths. Each RGB observation is shown alongside the 3D sonar returns used to select calibration points.</figcaption>
+      </figure>
+      <div class="callout reveal"><i class="fas fa-trophy"></i>uScenes is the source data for <a href="https://macvi.org/workshop/macvi27/challenges/diver3d" target="_blank" rel="noopener">Diver3D</a>, the first 3D sonar diver detection challenge at MaCVi @ WACV 2027, with <a href="../sonarvoxnet/">SonarVoxNet</a> as the baseline.</div>
+
+      <h2 id="bibtex">BibTeX</h2>
+      <div class="bibtex">
+        <button class="copy-btn">Copy</button>
+<pre>@misc{dong2026uscenes,
+  title         = {uScenes: A Multimodal RGB and 3D Sonar Dataset for Underwater Robot Perception},
+  author        = {Trung Tien Dong and Zhenqi Wu and Aditya Penumarti and Zi-Hao Zhang and Micaiah Bartlett and Jane Shin and Xiaomin Lin},
+  year          = {2026},
+  eprint        = {2608.27795},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  url           = {https://arxiv.org/abs/2608.27795}
+}</pre>
+      </div>
+    </div>
+
+    <p class="back-link"><a href="../../#publications"><i class="fas fa-arrow-left"></i> Back to publications</a></p>
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Trung Tien Dong · ERA Lab, University of South Florida</span>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/trungdong28" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://scholar.google.com/citations?user=G8nWNPsAAAAJ&hl=en" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="https://github.com/DongTrung28" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:dongt@usf.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var i = 0, n = 7, base = '../../assets/img/projects/uscenes/gallery/';
+    var rgb = document.getElementById('sg-rgb'), son = document.getElementById('sg-sonar'), cnt = document.getElementById('sg-i');
+    var th = document.querySelectorAll('.sg__thumb');
+    function go(k) {
+      i = (k + n) % n; rgb.src = base + i + '_rgb.jpg'; son.src = base + i + '_sonar.jpg'; cnt.textContent = i + 1;
+      th.forEach(function (t, j) { t.classList.toggle('is-active', j === i); });
+    }
+    document.querySelector('.sg__nav--prev').onclick = function () { go(i - 1); };
+    document.querySelector('.sg__nav--next').onclick = function () { go(i + 1); };
+    th.forEach(function (t) { t.onclick = function () { go(+t.getAttribute('data-i')); }; });
+    for (var k = 0; k < n; k++) { new Image().src = base + k + '_sonar.jpg'; }
+  })();
+  </script>
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>
